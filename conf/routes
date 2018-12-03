@@ -1,0 +1,35 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+# Usuarios
+GET     /usuario/{id_usuario}                   Usuarios.getUsuario
+GET     /usuarios                               Usuarios.getUsuarios
+POST    /usuario                                Usuarios.postUsuario
+
+# Perguntas
+GET     /perguntas                              Perguntas.getPerguntas
+# Login
+POST    /loginUser                              Login.loginUser
+
+# Amigo
+POST    /amigo/{id_requerente}/{id_destino}     Amigos.addAmigo
+GET     /amigo/{id_requerente}                  Amigos.getAmigos
+
+# Convite
+POST    /convite/{id_envio}/{id_recibo}         Convites.convidar
+GET     /convite/convites                       Convites.convites
+POST    /convite/aceitar/{id_envio}/{id_recibo} Convites.AceitarConvite
+POST    /convite/recusar/{id_envio}/{id_recibo} Convites.RecusarConvite
+POST    /convite/cancelar/{id_envio}/{id_recibo} Convites.CancelarConvite
+GET     /convite/status/{id_envio}/{id_recibo}  Convites.getStatusConvite
+
+#jogo
+POST    /jogo/{id_envio}/{id_recibo}                                Jogos.novoJogo
+GET     /jogo/getJogo/{id_envio}/{id_recibo}                        Jogos.getJogo
+GET     /jogo/finalizar/{id_jogo}                                   Jogos.finalizar
+GET     /jogo/monitorar                                             Jogos.monitorar
+POST    /jogo/responder/{id_jogo}/{id_user}/{id_pergunta_resposta}  Jogos.responder
+
